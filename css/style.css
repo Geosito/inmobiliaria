@@ -1,123 +1,261 @@
+/* Scrollbar / Barra navegacion 
+
+
+---------------------------------------------------*/
 body::-webkit-scrollbar {
     width: 8px;
     background: rgba(0, 0, 0, 1);
 
 }
+
 body::-webkit-scrollbar-thumb {
-    background:rgb(255, 255, 255) ;
+    background: rgb(255, 255, 255);
     border-radius: 10px;
 }
 
-html{
+
+/* Medidas / Tamaños 
+
+
+---------------------------------------------------*/
+html {
     scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: century-gothic, sans-serif;
     margin: 0;
 }
 
-h1{ font-size: 3.5em;}
-h2{ font-size: 2.7em;}
-h3{ font-size: 2em;}
-p{ font-size: 1.25em;}
-ul{ list-style: none;}
-li{ font-size: 1.25em;}
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p {
+    font-size: 1.25em;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 1.25em;
+}
+
+/* Header / Containers / Divs 
 
 
-.container{
+---------------------------------------------------*/
+
+.container {
     max-width: 1400px;
     margin: auto;
 }
 
-header{
-    background-color: rgb(245,245,245);
-    
+header {
+    z-index: 100;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 5px 100px black;
+
 }
 
-header .logo{
+header .logo {
     margin: 0;
-    padding: 25px 30px;
+    padding: 0px 10px;
     font-weight: bold;
     color: rgb(0, 0, 0);
     font-size: 1.6em;
+    
 }
 
-header .container{
+header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header nav{
+header nav {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-bottom: 25px;
 }
 
-header a{
+header a {
     padding: 5px 12px;
     text-decoration: none;
     font-weight: bold;
     color: black;
 }
 
-header a:hover{
+header a:hover {
     color: rgb(0, 0, 0);
+    color: darkred;
+    text-decoration: underline;
+
 }
 
-#hero{
+/* Banner Fondo  
+
+
+---------------------------------------------------*/
+
+#hero {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
     height: 90vh;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("../img/fondos.jpg");
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../img/fondos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#herocontacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 50vh;
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../img/fondos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#hero h1{
+#herotienda {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-color: rgb(36, 36, 36);
+}
+
+#hero h1 {
     color: white;
 }
 
-#hero button{
+#hero button {
     font-size: 1.75em;
 }
 
-#somos-proya .container{
-    text-align: center;
-    padding: 200px 12px;
-}
+/* Animacion Texto / Animacion Elementos / Indicaciones */
 
-#Contratos{
-    background-color: rgb(30,30,30);
+.animh1 {
     color: white;
-    text-align: center;
+    animation-name: textoup;
+    animation-duration: 3s;
+    
 }
 
-#Contratos .container{
+@keyframes textoup {
+    0%{
+        color:  #ffffff00;
+        transform: translateY(100px)
+    }
+    20%{
+        color: #ffffff00;
+    }
+    100%{
+        transform: translateY(0px)
+    }
+}
+
+
+.animflecha {
+    position: relative;
+    top: 15%;
+    background-image: url(/img/abajoflecha.png);
+    animation-name: flecha;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+    animation-delay: 4s;
+
+}
+@keyframes flecha {
+    0%{
+        transform: translateY(100px)
+    }
+    20%{
+        color: #ffffff00;
+    }
+    100%{
+        transform: translateY(0px)
+    }
+}
+
+
+/* Informacion / Container con IMG / Divs / Cartas
+
+
+---------------------------------------------------*/
+
+
+
+#somos-proya .container {
+    text-align: center;
+    padding: 10% 12px;
+}
+
+#Contratos {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    
+}
+
+#Contratos .infocontacto {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    
+
+
+    border-radius: 10px;
+    
+    padding: 5%;
+    background-color:white;
+}
+#Contratos .contenedortexto {
+    zoom: 110%;
+
+    padding: 5vh;
+    width: 100%;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+#Contratos .container {
     padding: 150px 12px;
 }
 
-#Contratos h2{
+#Contratos h2 {
     margin-top: 0;
     font-size: 3.2em;
 }
 
-#Contratos p{
+#Contratos p {
     display: none;
 }
 
-#Contratos .carta{
+#Contratos .carta {
     background-position: center center;
     background-size: cover;
     padding: 50px 0px;
@@ -125,110 +263,102 @@ header a:hover{
     border-radius: 15px;
 }
 
-.carta:first-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("img.jpg");
+.carta:first-child {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("../img/fondos.jpg");
+
 
 }
 
-.carta:nth-child(2){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("img.jpg");
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("");
 }
 
-.carta:nth-child(3){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("img.jpg");
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("img.jpg");
 
 }
 
-#contacto .container{
+#contacto .container {
     text-align: center;
     padding: 250px 12px;
 }
 
-#contacto li{
+#contacto li {
     margin: 16px 0px;
     font-weight: bold;
 }
 
-#final{
+#final {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: rgb(30,30,30);
+    background-color: rgb(30, 30, 30);
     color: white;
     height: 80vh;
 }
 
-#final h2{
+#final h2 {
     font-size: 9vw;
 }
 
-#final button{
+#final button {
     font-size: 5vw;
 }
 
-footer{
-    background-color: rgb(230,230,230);
-    
-    
+footer {
+    background-color: rgb(230, 230, 230);
+
+
 }
 
-footer p{
+footer p {
     margin: 0;
     padding: 12px;
-    color: rgb(100,100,100);
+    color: rgb(100, 100, 100);
 }
 
-footer .container{
+footer .container {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media (min-width: 850px){
-    header{
+@media (min-width: 850px) {
+    header {
         position: fixed;
         width: 100%;
     }
 
-    header .container{
+    header .container {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    header nav{
+    header nav {
         flex-direction: row;
         padding-bottom: 0;
         padding-right: 20px;
     }
 
-    #hero h1{
+    #hero h1 {
         font-size: 5em;
     }
 
-    #somos-proya .container{
+    #somos-proya .container {
         display: flex;
         justify-content: space-evenly;
     }
 
-    #somos-proya .texto{
+    #somos-proya .texto {
         width: 50%;
         max-width: 600px;
         text-align: initial;
@@ -238,104 +368,268 @@ footer .container{
         justify-content: center;
     }
 
-    #somos-proya h2{
+    #somos-proya h2 {
         margin-top: 0px;
     }
 
-    #somos-proya .img-container{
-        background-image: url("media/somos-proya.jpg");
+    #somos-proya .img-container {
+        background-image: url("../img/punilla.jpeg");
         background-size: cover;
         background-position: center center;
         height: 500px;
-        width: 400px; 
+        width: 1000px;
     }
 
-    #Contratos .programas{
+    #Contratos .programas {
         display: flex;
         justify-content: center;
     }
 
-    #Contratos p{
+    #Contratos p {
         display: block;
         margin-bottom: 30px;
     }
 
-    #Contratos h2{
+    #Contratos h2 {
         font-size: 4em;
     }
 
-    #Contratos h3{
+    #Contratos h3 {
         margin-top: 0;
     }
 
-    #Contratos .carta{
+    #Contratos .carta {
         padding: 50px;
         background-size: 100% 150px;
         background-repeat: no-repeat;
         background-position-y: 0;
         background-color: rgba(50, 50, 50, 1);
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     }
 
-    .carta:first-child{
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("media/front-end-cropped.jpg");
+    .carta:first-child {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url();
 
     }
 
-    .carta:nth-child(2){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("media/full-stack-cropped.jpg");
+    .carta:nth-child(2) {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url();
     }
 
-    .carta:nth-child(3){
-        background-image: linear-gradient(
-            0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        )
-        ,url("media/python-cropped.jpg");
+    .carta:nth-child(3) {
+        background-image: linear-gradient(0deg,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5)), url();
 
     }
 
-    #contacto{
-        background-image: url("media/background-2.jpeg");
+    #contacto {
+        background-image: url();
         background-repeat: no-repeat;
         background-size: 500px 400px;
         background-position: calc(100vw - 500px) 120px;
     }
 
-    #contacto .container{
+    #contacto .container {
         text-align: initial;
     }
 
-    #contacto ul{
+
+
+
+/* Login / Botones / Formulario
+
+
+---------------------------------------------------*/
+
+
+    .form-register {
+        display: flex;
+        margin-left: 15%;
+        flex-direction: column;
+        width: 70%;
+        text-align: center;
+        background-color: rgb(243, 243, 243);
+        font-family: 'calibri';
+        color: black;
+
+    }
+
+    .form-register h4 {
+        font-size: 22px;
+        padding:  10px;
+    }
+
+    .controls {
+        justify-content: center;
+        background: #fffefe;
+        padding: 10px;
+        border-style: outset;
+        border-radius: 5px;
+        margin: 5px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 1px solid rgb(0, 0, 0);
+        font-family: 'calibri';
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+    }
+    .controlslink {
+        justify-content: center;
+        background: #4b0303;
+        padding: 10px;
+        border-style: outset;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        font-family: 'calibri';
+        font-size: 18px;
+        color: white;
+    }
+
+    .form-register p {
+        height: 100%;
+        text-align: center;
+        font-size: 18px;
+        line-height: 40px;
+    }
+
+    .form-register a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .form-register a:hover {
+        color: rgb(24, 24, 24);
+        text-decoration: underline;
+    }
+
+    .form-register .botons {
+        width: 50%;
+        border-radius: 5px;
+        background: rgb(34, 34, 34);
+        border: none;
+        padding: 20px;
+        color: white;
+        margin: 10px;
+        font-size: 16px;
+    }
+
+    #contacto ul {
         margin-left: 100px;
     }
 
-    #final h2{
+    #final h2 {
         font-size: 5em;
     }
 
-    #final button{
+    #final button {
         font-size: 2em;
-    }
-
-    footer .container{
-        justify-content: flex-end;
     }
 }
 
 @media (min-width: 1200px) {
-    #contacto{
+    #contacto {
         background-position-x: calc(100vw - 800px);
     }
+}
+
+/* PIE DE PAGINA 
+
+
+---------------------------------------------------*/
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container{
+	max-width: 1200px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #1b1b1b;
+    padding: 70px ;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 50px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: rgb(200, 24, 24);
+	height: 2px;
+	box-sizing: border-box;
+	width: 120px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+    
+}
+.footer-col ul li a{
+
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	margin-left: 5px;
+}
+/*.footer-col .link-redes a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.footer-col .link-redes a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}*/
+
+/*Responsive caracteristica*/
+
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
 }
