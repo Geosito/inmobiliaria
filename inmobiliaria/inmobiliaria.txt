@@ -1,0 +1,69 @@
+DROP DATABASE IF EXISTS inmobiliaria;
+DROP DATABASE IF EXISTS inmobiliaria;
+
+CREATE DATABASE IF NOT EXISTS inmobiliaria;
+
+USE inmobiliaria;
+
+CREATE TABLE usuario
+(mail VARCHAR (30) NOT NULL,
+contrasenia INT NOT NULL,
+id_usuario INT AUTO_INCREMENT,
+PRIMARY KEY (id_usuario));
+
+CREATE TABLE inmuebles 
+(es_alquiler BOOLEAN,
+id_inmuebles INT AUTO_INCREMENT,
+PRIMARY  KEY (id_inmuebles));
+
+CREATE TABLE propiedades
+(precio FLOAT,
+ubicacion VARCHAR (30),
+id_propiedades INT AUTO_INCREMENT,
+ id_usuario INT,
+PRIMARY KEY (id_propiedades),
+FOREIGN KEY (id_usuario)
+ REFERENCES usuario(id_usuario));
+
+CREATE TABLE contacto
+(ubicacion VARCHAR (30),
+telefono INT,
+mail VARCHAR (30),
+redsocial VARCHAR (30),
+id_contacto INT AUTO_INCREMENT,
+ id_usuario INT,
+PRIMARY KEY (id_contacto),
+FOREIGN KEY (id_usuario)
+ REFERENCES usuario(id_usuario));
+ 
+ INSERT INTO usuario (mail, contrasenia)  
+ VALUES ("ezemerlo20@gmail.com", 12345),
+ 	("ivanarielgonzalez5@gmail.com", 23456),
+        ("camilavenca@gmail.com", 34567),
+        ("pamequi@gmail.com",45678),
+        ("ellauri@gmail.com ", 12345),
+        ("santielh@gmail.com", 23456);
+        
+ INSERT INTO inmuebles (es_alquiler)  
+ VALUES (true),
+ 	(false),
+        (true),
+        (true),
+        (false),
+        (false);  
+     
+ INSERT INTO propiedades (precio, ubicacion,id_usuario )   
+ VALUES (10000,"Villa Carlos Paz", 1),
+        (15000,"Villa Carlos Paz", 2),
+        (13000,"Villa Carlos Paz", 3),
+        (17500,"Villa Carlos Paz", 4),
+        (11500,"Villa Carlos Paz", 5),
+        (12300,"Villa Carlos Paz", 6);
+        
+ INSERT INTO contacto (ubicacion, telefono, mail, redsocial, id_usuario)  
+ VALUES ("Villa Carlos Paz", 3541230039, "emerlo@gmail.com","WhatsApp", 1),
+        ("Villa Carlos Paz", 3541316030,"igonzalez@gmail.com","Mail", 2),
+        ("Villa Carlos Paz", 3541222249,"ccalderon@gmail.com","Instagram", 3),
+        ("Villa Carlos Paz", 354154012,"cruiz@gmail.com","Mail", 4),
+        ("Villa Carlos Paz", 3541293534,"lsaeitz@gmail.com","WhatsApp", 5),
+        ("Villa Carlos Paz", 3541554050,"sheredia@gmail.com","Instagram", 6);
