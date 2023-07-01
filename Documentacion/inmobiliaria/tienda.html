@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="shortcut icon" href="./img/majinicon.jpg" />
+  <title>Inmuebles</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <p class="logo">
+        <img src="./img/logocompletopng.png" style="max-width: 170px" />
+      </p>
+      <nav>
+        <a href="indexx.html">Inicio</a>
+        <a href="tienda.html" style="color: rgb(200, 34, 34)">Inmuebles</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="equipo.html">Nuestro Equipo</a>
+        <a href="login.html">Usuario</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <section id="herocontacto">
+    <h1 class="animh1">Encontra lo <br />que buscas</h1>
+  </section>
+
+
+
+  <section class="bodycarta" style="background-color: black solid #000; height: 10vh;">
+    <h1 class="animh1" style="position: absolute; margin-bottom: 40%; color: rgb(255, 255, 255);" > Destacados </h1>
+    <div class="flip" style="width: 300px; height: 300px;">
+      <div class="cara frente">
+          <img src="img/Cosquin.jpg" alt="">
+          <h3>Alquilar</h3>
+      </div>
+      <div class="cara espalda">
+          <h3>Alquilar</h3>
+          <p>Descubri la gran cantidad de inmuebles que hay disponibles en nuestro catalogo, elegí el que mas se adapte a vos. </p>
+          <div class="link">
+              <a href="tienda.html">Ver más</a>
+          </div>
+      </div>
+  </div>
+  
+  <div class="flip">
+      <div class="cara frente">
+          <img src="img/vcp2.jpg" alt="">
+          <h3>Compra</h3>
+      </div>
+      <div class="cara espalda">
+          <h3>Compra</h3>
+          <p>Descubri la gran cantidad de inmuebles que hay disponibles en nuestro catalogo, encontraras tu nuevo hogar, elegí el que mas se adapte a vos. </p>
+          <div class="link">
+              <a href="tienda.html">Ver más</a>
+          </div>
+      </div>
+  </div>
+  
+  <div class="flip" style="width: 300px; height: 300px;">
+      <div class="cara frente">
+          <img src="img/VCP.jpg" alt="">
+          <h3>Venta</h3>
+      </div>
+      <div class="cara espalda">
+          <h3>Venta</h3>
+          <p>Si estas buscando poner en alquiler o venta un terreno, casa o departamento, este es el lugar, un servicio de fidelidad entre cliente y Majin. </p>
+          <div class="link">
+              <a href="tienda.html">Ver más</a>
+          </div>
+      </div>
+  </div>
+  </section>
+
+
+
+  <section class="contenido" style="height: 100vh;">
+    <h1 class="animh1" style="position: absolute; padding-top: 10%; margin-left: 22%; color: black;" > Propiedades </h1>
+    <div class="mostrador" id="mostrador" style="margin-top: 30%;">
+        <div class="fila">
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/1.png" alt="">
+                </div>
+                <p class="descripcion">Tamarinos 420</p>
+                <span class="precio">USD$ 1.300</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/2.png" alt="">
+                </div>
+                <p class="descripcion" id>Tupungato 69 </p>
+                <span class="precio">USD$ 1.800</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/3.png" alt="">
+                </div>
+                <p class="descripcion">Los Sauces 318
+                </p>
+                <span class="precio">USD$ 3.600</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/4.png" alt="">
+                </div>
+                <p class="descripcion">Alejandro Magno 58</p>
+                <span class="precio">USD$ 1.800</span>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/5.png" alt="">
+                </div>
+                <p class="descripcion">Brasil 316</p>
+                <span class="precio">USD$ 130</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/6.png" alt="">
+                </div>
+                <p class="descripcion">Los Platanos 12</p>
+                <span class="precio">USD$ 2.000</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/7.png" alt="">
+                </div>
+                <p class="descripcion">Tamarinos 368</p>
+                <span class="precio">USD$ 2.500</span>
+            </div>
+            <div class="item" onclick="cargar(this)">
+                <div class="contenedor-foto">
+                    <img src="img/8.png" alt="">
+                </div>
+                <p class="descripcion">Juncal 142</p>
+                <span class="precio">USD$ 1.800</span>
+            </div>
+        </div> 
+    </div>
+    <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+    <div class="seleccion" id="seleccion">
+        <div class="cerrar" onclick="cerrar()">
+            &#x2715
+        </div>
+        <div class="info">
+            <img src="img/1.png" alt="" id="img">
+            <h2 id="modelo">NIKE MODEL 1</h2>
+            <p id="descripcion">Descripción Modelo 1</p>
+
+            <span class="precio" id="precio">$ 130</span>
+
+            <div class="fila">
+                <div class="size">
+                    <label for="">SIZE</label>
+                    <select name="" id="">
+                        <option value="">40</option>
+                        <option value="">42</option>
+                        <option value="">44</option>
+                        <option value="">46</option>
+                    </select>
+                </div>
+                <button>AGREGAR AL CARRITO</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <style>
+        img {
+          border-radius: 5px;
+          margin-right: 10%;
+        }
+      </style>
+      <img src="img/logocompleto.png">
+
+      <div class="row">
+        <div class="footer-col">
+          <h4>Informacion</h4>
+          <ul>
+            <li><a href="equipo.html">Miembros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Terminos y Condiciones</a></li>
+            <li><a href="#">Asociados</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Navegar</h4>
+          <ul>
+            <li><a href="tienda.html">Inmuebles</a></li>
+            <li><a href="tienda.html">Departamentos</a></li>
+            <li><a href="tienda.html">Venta</a></li>
+            <li><a href="tienda.html">Propiedades</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Cliente</h4>
+          <ul>
+            <li><a href="login.html">Cuenta de Usuario</a></li>
+            <li><a href="#">Metodos de pago</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes </h4>
+          <ul>
+            <li><a href="contacto.html">WhatsApp</a></li>
+            <li><a href="contacto.html">Instagram</a></li>
+            <li><a href="contacto.html">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+</body>
+
+</html>
